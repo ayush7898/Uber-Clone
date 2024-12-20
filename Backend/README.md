@@ -71,5 +71,5 @@ This endpoint is used to log in an existing user. It requires the user's email a
 - `token` (string): The JWT token for the authenticated user.
 - `user` (object): The authenticated user's details.
 - `message` (string): A success message indicating successful login.
-
+- `mymessage` 
 controller handles the request, calls the service to create the user, and returns a response. The service interacts with the model to create the user in the database.

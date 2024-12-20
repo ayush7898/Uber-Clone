@@ -33,8 +33,10 @@ userSchema.methods.generateAuthToken = ()=>{
     const token = jwt.sign({_id: this._id}, process.env.JWT_SECRET)
     return token
 }
-userSchema.methods.comparePassword = async (password)=>{
+userSchema.methods.comparePassword = async function (password){
+    console.log(this.password ,"hello password")
     return await bcrypt.compare(password,this.password)
+
 }
 userSchema.statics.hashPassword = async (password)=>{
     return await bcrypt.hash(password,10)

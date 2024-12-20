@@ -56,3 +56,20 @@ The code for the `/users/register` endpoint is structured as follows:
 4. **Model**: The user model is defined in `models/user.model.js`.
 
 The route uses `express-validator` to validate the request body. The controller handles the request, calls the service to create the user, and returns a response. The service interacts with the model to create the user in the database.
+
+
+### POST /users/login
+
+#### Description
+This endpoint is used to log in an existing user. It requires the user's email and password.
+
+#### Request Body
+- `email` (string, required): The email of the user. Must be a valid email address.
+- `password` (string, required): The password of the user. Must be at least 6 characters long.
+
+#### Response
+- `token` (string): The JWT token for the authenticated user.
+- `user` (object): The authenticated user's details.
+- `message` (string): A success message indicating successful login.
+
+controller handles the request, calls the service to create the user, and returns a response. The service interacts with the model to create the user in the database.
